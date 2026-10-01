@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, :where(.dark *)));
+
+@theme {
+  --font-cairo: "Cairo", sans-serif;
+  --font-tajawal: "Tajawal", sans-serif;
+  --color-petrol: #0A2E36;
+  --color-petrol-surface: #123F49;
+  --color-petrol-border: #1C4F5B;
+  --color-clay: #D9603B;
+  --color-clay-hover: #C04E2B;
+  --color-mint: #7CFFCB;
+  --color-sand-bg: #F6F1EA;
+  --color-sand-border: #E4DCCF;
+  --color-sand-text: #F4EFE6;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-tajawal), sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cairo), sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Topographic Contour Pattern (Signature Element) */
+.contour-pattern-light {
+  background-image: radial-gradient(circle at 50% 50%, rgba(10, 46, 54, 0.04) 1px, transparent 1px),
+    repeating-radial-gradient(circle at 20% 30%, transparent 0, transparent 18px, rgba(217, 96, 59, 0.05) 19px, transparent 20px),
+    repeating-radial-gradient(circle at 80% 70%, transparent 0, transparent 28px, rgba(10, 46, 54, 0.04) 29px, transparent 30px);
+}
+
+.contour-pattern-dark {
+  background-image: radial-gradient(circle at 50% 50%, rgba(124, 255, 203, 0.04) 1px, transparent 1px),
+    repeating-radial-gradient(circle at 20% 30%, transparent 0, transparent 18px, rgba(217, 96, 59, 0.08) 19px, transparent 20px),
+    repeating-radial-gradient(circle at 80% 70%, transparent 0, transparent 28px, rgba(124, 255, 203, 0.04) 29px, transparent 30px);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(217, 96, 59, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 96, 59, 0.6);
+}
+
